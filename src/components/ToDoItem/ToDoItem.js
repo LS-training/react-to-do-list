@@ -31,6 +31,20 @@ export default class ToDoItem extends Component {
     } = this.props;
     return (
       <li className="list-group-item text-capitalize d-flex justify-content-between my-2 shadow">
+        <span
+          className={
+            this.state.itemDone
+              ? "mx-2 text-success pointer"
+              : "mx-2 text-secondary pointer"
+          }
+          onClick={this.helperFunction}
+        >
+          {this.state.itemDone ? (
+            <i class="fas fa-check-square" onClick={handleDone}></i>
+          ) : (
+            <i class="far fa-check-square" onClick={handleDone}></i>
+          )}
+        </span>
         <span>
           {this.state.itemDone ? (
             <h6 className="done-item">
@@ -42,20 +56,6 @@ export default class ToDoItem extends Component {
         </span>
 
         <div className="todo-icon">
-          <span
-            className={
-              this.state.itemDone
-                ? "mx-2 text-success pointer"
-                : "mx-2 text-secondary pointer"
-            }
-            onClick={this.helperFunction}
-          >
-            {this.state.itemDone ? (
-              <i class="fas fa-check-square" onClick={handleDone}></i>
-            ) : (
-              <i class="far fa-check-square" onClick={handleDone}></i>
-            )}
-          </span>
           <span className="mx-2 text-primary pointer" onClick={handleEdit}>
             <i className="fas fa-pen"></i>
           </span>
