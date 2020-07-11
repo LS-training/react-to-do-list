@@ -25,7 +25,7 @@ export default class ToDoItem extends Component {
       handleChangePositionDown,
     } = this.props;
     return (
-      <li className="list-group-item text-capitalize d-flex justify-content-between my-2">
+      <li className="list-group-item text-capitalize d-flex justify-content-between my-2 shadow">
         <span>
           {this.state.itemDone ? (
             <h6 className="done-item">

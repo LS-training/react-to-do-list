@@ -19,3 +19,10 @@ code {
 .pointer:hover {
   cursor: pointer;
 }
+
+.shadow {
+}
+.shadow:hover {
+  box-shadow: gray;
+  transition: all 0.3s linear;
+}
