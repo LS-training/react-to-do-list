@@ -74,6 +74,7 @@ class App extends React.Component {
               clearList={this.clearList}
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
+              handleDone={this.handleDone}
             />
           </div>
         </div>

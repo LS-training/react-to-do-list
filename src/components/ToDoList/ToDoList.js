@@ -3,7 +3,13 @@ import ToDoItem from "../ToDoItem/ToDoItem";
 
 export default class ToDoList extends Component {
   render() {
-    const { items, clearList, handleDelete, handleEdit } = this.props;
+    const {
+      items,
+      clearList,
+      handleDelete,
+      handleEdit,
+      handleDone,
+    } = this.props;
     return (
       <ul className="list-group my-5">
         <h3 className="text-capitalize text-center"> ToDo List</h3>
@@ -14,6 +20,7 @@ export default class ToDoList extends Component {
               title={item.title}
               handleDelete={() => handleDelete(item.id)}
               handleEdit={() => handleEdit(item.id)}
+              handleDone={() => handleDone(item.id)}
             />
           );
         })}
