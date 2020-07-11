@@ -21,8 +21,15 @@ code {
 }
 
 .shadow {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
-.shadow:hover {
-  box-shadow: gray;
-  transition: all 0.3s linear;
+
+.shadow:after {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.shadow:hover:after {
+  opacity: 1;
 }
