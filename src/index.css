@@ -15,3 +15,7 @@ code {
 .done-item {
   opacity: 0.5;
 }
+
+.pointer:hover {
+  cursor: pointer;
+}

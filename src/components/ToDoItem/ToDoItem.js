@@ -32,15 +32,15 @@ export default class ToDoItem extends Component {
 
         <div className="todo-icon">
           <span
-            className="mx-2 text-primary btn"
+            className="mx-2 text-primary pointer"
             onClick={this.handleDoneToggle}
           >
             <i className="fas fa-check"></i>
           </span>
-          <span className="mx-2 text-success btn" onClick={handleEdit}>
+          <span className="mx-2 text-success pointer" onClick={handleEdit}>
             <i className="fas fa-pen"></i>
           </span>
-          <span className="mx-2 text-danger btn" onClick={handleDelete}>
+          <span className="mx-2 text-danger pointer" onClick={handleDelete}>
             <i className="fas fa-trash"></i>
           </span>
         </div>
