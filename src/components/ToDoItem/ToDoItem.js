@@ -8,6 +8,10 @@ export default class ToDoItem extends Component {
     };
   }
 
+  helperFunction = () => {
+    this.handleDoneToggle();
+  };
+
   handleDoneToggle = () => {
     const active = this.state.itemDone;
     this.setState({
@@ -23,6 +27,7 @@ export default class ToDoItem extends Component {
       handleEdit,
       handleChangePositionUp,
       handleChangePositionDown,
+      handleDone,
     } = this.props;
     return (
       <li className="list-group-item text-capitalize d-flex justify-content-between my-2 shadow">
@@ -38,12 +43,20 @@ export default class ToDoItem extends Component {
 
         <div className="todo-icon">
           <span
-            className="mx-2 text-primary pointer"
-            onClick={this.handleDoneToggle}
+            className={
+              this.state.itemDone
+                ? "mx-2 text-success pointer"
+                : "mx-2 text-secondary pointer"
+            }
+            onClick={this.helperFunction}
           >
-            <i className="fas fa-check"></i>
+            {this.state.itemDone ? (
+              <i class="fas fa-check-square" onClick={handleDone}></i>
+            ) : (
+              <i class="far fa-check-square" onClick={handleDone}></i>
+            )}
           </span>
-          <span className="mx-2 text-success pointer" onClick={handleEdit}>
+          <span className="mx-2 text-primary pointer" onClick={handleEdit}>
             <i className="fas fa-pen"></i>
           </span>
           <span className="mx-2 text-danger pointer" onClick={handleDelete}>

@@ -89,6 +89,15 @@ class List extends React.Component {
     });
   };
 
+  //Function to Sort Item Down to Bottom, when DONE
+  handleDone = (id) => {
+    const selectedItem = this.state.items.find((item) => item.id === id); // Item I want to change
+    let newArray = this.state.items.filter((item) => item.id !== id);
+    newArray = [...newArray, selectedItem];
+    this.setState({
+      items: newArray,
+    });
+  };
   render() {
     return (
       <div className="container">
@@ -106,9 +115,9 @@ class List extends React.Component {
               clearList={this.clearList}
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
-              handleDone={this.handleDone}
               handleChangePositionUp={this.handleChangePositionUp}
               handleChangePositionDown={this.handleChangePositionDown}
+              handleDone={this.handleDone}
             />
           </div>
         </div>
