@@ -63,6 +63,12 @@ class List extends React.Component {
       // Index of Item i Want to change
       (item) => item.id === id
     );
+    if (this.state.items.length === 1) {
+      return;
+    }
+    if (selectedItemIndex === 0) {
+      return;
+    }
     const IndexOfInsertion = selectedItemIndex - 1; // Index of Insertion
     const ChangingElement = this.state.items[selectedItemIndex - 1]; // get helper var to save second element of change
     const newArray = this.state.items;
@@ -79,6 +85,13 @@ class List extends React.Component {
       // Index of Item i Want to change
       (item) => item.id === id
     );
+    if (this.state.items.length === 1) {
+      return;
+    }
+    if (selectedItemIndex === this.state.items.length - 1) {
+      return;
+    }
+
     const IndexOfInsertion = selectedItemIndex + 1; // Index of Insertion
     const ChangingElement = this.state.items[selectedItemIndex + 1]; // get helper var to save second element of change
     const newArray = this.state.items;
