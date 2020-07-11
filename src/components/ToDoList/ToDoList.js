@@ -9,6 +9,8 @@ export default class ToDoList extends Component {
       handleDelete,
       handleEdit,
       handleDone,
+      handleChangePositionUp,
+      handleChangePositionDown,
     } = this.props;
     return (
       <ul className="list-group my-5">
@@ -21,6 +23,8 @@ export default class ToDoList extends Component {
               handleDelete={() => handleDelete(item.id)}
               handleEdit={() => handleEdit(item.id)}
               handleDone={() => handleDone(item.id)}
+              handleChangePositionUp={() => handleChangePositionUp(item.id)}
+              handleChangePositionDown={() => handleChangePositionDown(item.id)}
             />
           );
         })}

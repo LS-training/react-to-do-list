@@ -17,7 +17,13 @@ export default class ToDoItem extends Component {
   };
 
   render() {
-    const { title, handleDelete, handleEdit } = this.props;
+    const {
+      title,
+      handleDelete,
+      handleEdit,
+      handleChangePositionUp,
+      handleChangePositionDown,
+    } = this.props;
     return (
       <li className="list-group-item text-capitalize d-flex justify-content-between my-2">
         <span>
@@ -42,6 +48,18 @@ export default class ToDoItem extends Component {
           </span>
           <span className="mx-2 text-danger pointer" onClick={handleDelete}>
             <i className="fas fa-trash"></i>
+          </span>
+          <span
+            className="mx-2 text-secondary pointer"
+            onClick={handleChangePositionUp}
+          >
+            <i class="fas fa-arrow-up"></i>
+          </span>
+          <span
+            className="mx-2 text-secondary pointer"
+            onClick={handleChangePositionDown}
+          >
+            <i class="fas fa-arrow-down"></i>
           </span>
         </div>
       </li>
